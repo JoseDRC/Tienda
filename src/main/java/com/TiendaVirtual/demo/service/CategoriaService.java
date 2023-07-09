@@ -12,6 +12,8 @@ import java.util.List;
  * @author Jose Daniel
  */
 public interface CategoriaService {
+
+    public static getCategoria(boolean b);
     // Se obtiene un listado de categorias en un List
     public List<Categoria> getcategoria(boolean activos);
 

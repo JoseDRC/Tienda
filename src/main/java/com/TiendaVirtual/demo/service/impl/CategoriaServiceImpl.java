@@ -4,9 +4,13 @@
  */
 package com.TiendaVirtual.demo.service.impl;
 
+/**
+ *
+ * @author Jose Daniel
+ */
 
-import com.TiendaVirtual.demo.dao.CategoriaDao;
 import com.TiendaVirtual.demo.Domain.Categoria;
+import com.TiendaVirtual.demo.dao.CategoriaDao;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,15 +31,24 @@ public abstract class CategoriaServiceImpl implements CategoriaService {
         }
         return lista;
     }
-
+    
+    
     @Override
-    public List<Categoria> getcategoria(boolean activos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    @Transactional
+    public void save(Categoria categoria){
+        categoriaDao.save(categoria);
     }
+    
+    @Override
+    @Transactional
+    public void delete(Categoria categoria){
+        categoriaDao.delete(categoria);
 
     
+    
     }
-
-
- 
-
+}
+/**
+ *
+ *
+ */ 
