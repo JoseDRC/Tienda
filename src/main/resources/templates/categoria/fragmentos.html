@@ -22,6 +22,15 @@
                 </div>
             </div>
         </section>
+        <div class="mb-3">
+            <label for="idCategoria">[[#{producto.categoria}]]</label>
+            <select name="categoria.idCategoria" 
+                    class="form-select" 
+                    aria-label="Default select example">
+                <option th:each="c : ${categorias}" th:value="${c.idCategoria}" th:text="${c.descripcion}">
+                </option>
+            </select>
+        </div>
 
         <!-- 2 Fragmento para agregar categoria, es la ventana modal -->
         <section th:fragment="agregarCategoria">
