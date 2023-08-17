@@ -4,16 +4,15 @@
  */
 package com.TiendaVirtual.demo.dao;
 
+import com.TiendaVirtual.demo.Domain.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author Jose Daniel
  */
-public interface CategoriaDao extends JpaRepository <CategoriaDao,Long> {
-
-    public boolean isActivo();
+//to use JPA, findAll, findByID...
+public interface CategoriaDao extends JpaRepository <Categoria,Long> {
     
 }
- 
 

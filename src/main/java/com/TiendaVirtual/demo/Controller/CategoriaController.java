@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-@Controller
+Controller
 @Slf4j
 @RequestMapping("/categoria")
 public class CategoriaController {
@@ -32,6 +32,7 @@ public class CategoriaController {
         model.addAttribute("totalCategorias", categorias.size());
         return "/categoria/listado";
     }
+    
     
     @GetMapping("/nuevo")
     public String categoriaNuevo(Categoria categoria) {
@@ -68,4 +69,6 @@ public class CategoriaController {
         model.addAttribute("categoria", categoria);
         return "/categoria/modifica";
     }
+    
+    
 }

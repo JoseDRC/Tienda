@@ -5,7 +5,6 @@
 package com.TiendaVirtual.demo.service.impl;
 
 import com.TiendaVirtual.demo.service.FirebaseStorageService;
-import com.google.api.services.storage.Storage;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -66,7 +65,7 @@ public class FirebaseStorageServiceImpl implements FirebaseStorageService {
         
         Credentials credentials = GoogleCredentials
                 .fromStream(json.getInputStream());
-        Storage storage = StorageOptions.newBuilder()
+        com.google.cloud.storage.Storage storage = StorageOptions.newBuilder()
                 .setCredentials(credentials).build().getService();
         storage.create(blobInfo, Files.readAllBytes(file.toPath()));
         String url = storage.signUrl(blobInfo, 
@@ -95,5 +94,5 @@ public class FirebaseStorageServiceImpl implements FirebaseStorageService {
 }
 
 
-  
-}
+
+

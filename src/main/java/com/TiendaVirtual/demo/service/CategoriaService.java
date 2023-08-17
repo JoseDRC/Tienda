@@ -12,15 +12,15 @@ import java.util.List;
  * @author Jose Daniel
  */
 public interface CategoriaService {
-
-    public static getCategoria(boolean b);
+    
     // Se obtiene un listado de categorias en un List
-    public List<Categoria> getcategoria(boolean activos);
-
-    public getCategoria(boolean b);
-
-    public getCategoria(boolean b);
+    public List<Categoria> getCategorias(boolean activos);
+    
+    public Categoria getCategoria(Categoria categoria);
+    
+    public void save(Categoria categoria);
+    
+    public void delete(Categoria categoria);
  
 }
-
 

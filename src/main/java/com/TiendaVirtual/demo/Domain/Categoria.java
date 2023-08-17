@@ -4,16 +4,23 @@
  */
 package com.TiendaVirtual.demo.Domain;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import java.io.Serializable;
+import java.util.List;
+import lombok.Data;
+
 /**
  *
  * @author Jose Daniel
  */
 
-
-import jakarta.persistence.*;
-import java.io.Serializable;
-import java.util.List;
-import lombok.Data;
 
 @Data
 @Entity
@@ -30,16 +37,16 @@ public class Categoria implements Serializable {
     private String rutaImagen;
     private boolean activo;
 
+    
+    @OneToMany
+    @JoinColumn(name="id_categoria")
+    List<Producto> productos;
+    
     public Categoria() {
     }
 
     public Categoria(String categoria, boolean activo) {
         this.descripcion = categoria;
         this.activo = activo;
-        
     }
-    @OneToMany
-    @JoinColumn(name = "id_categoria")
-    List<Producto> productos;
-    }
-
+}
